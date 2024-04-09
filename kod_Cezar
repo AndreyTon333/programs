@@ -1,0 +1,27 @@
+#Day, mice. "Year" is a mistake!
+#Gdb, qmgi. "Ciev" ku b tpzahrl!
+str='Day, mice. "Year" is a mistake!'
+spl, ml, l_len, l_len_alpha, cnt, stroka = [], [], [], [], 0, ''
+spl=str.split(' ')
+for i in range(len(spl)):
+    l_len.append(len(spl[i]))
+    cnt = (len([c for c in spl[i] if c.isalpha()]))
+    l_len_alpha.append(cnt)
+for i in range (len(spl)):
+    stroka+=' '
+    for j in spl[i]:
+        if j.isalpha():
+            if j.isupper():
+                if ord(j)+l_len_alpha[i]<=90:
+                    j=chr(ord(j)+l_len_alpha[i])
+                if ord(j)+l_len_alpha[i]>=91:
+                    j=chr(64+(l_len_alpha[i]-(90-ord(j))))
+            if j.islower():
+                if ord(j)+l_len_alpha[i]<=122:
+                    j=chr(ord(j)+l_len_alpha[i])
+                elif ord(j)+l_len_alpha[i]>=122:
+                    j=chr(96+(l_len_alpha[i]-(122-ord(j))))
+        stroka+=j
+        
+
+print(stroka.strip())
