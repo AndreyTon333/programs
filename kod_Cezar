@@ -21,7 +21,6 @@ for i in range (len(spl)):
                     j=chr(ord(j)+l_len_alpha[i])
                 elif ord(j)+l_len_alpha[i]>=122:
                     j=chr(96+(l_len_alpha[i]-(122-ord(j))))
-        stroka+=j
-        
+        stroka+=j        
 
 print(stroka.strip())
